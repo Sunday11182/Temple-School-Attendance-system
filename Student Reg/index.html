@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temple Secondary School — Smart Attendance & Alert System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="app-header">
+    <div class="header-left">
+      <img src="https://www.ischooladvisor.com/qs/imagenes/colegio/logo/999000233/temple-school_512.png" width="100" height="100" alt="">
+      <div>
+        <h1>Temple Secondary School</h1>
+        <p class="subtitle">Smart Attendance &amp; Alert System</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <span id="live-date"></span>
+      <span id="live-clock">00:00:00</span>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Day selector + Search + Actions -->
+    <section class="toolbar">
+      <div class="toolbar-left">
+        <label class="date-label">
+          Viewing date
+          <input type="date" id="selected-date">
+        </label>
+        <button id="btn-today" class="btn-outline btn-sm">Today</button>
+      </div>
+      <div class="toolbar-right">
+        <input type="search" id="search-input" placeholder="Search name, ID or class…" class="search-input">
+        <button id="btn-export" class="btn-outline">Export CSV</button>
+        <button id="btn-alerts" class="btn-outline">Send Alerts</button>
+        <button id="btn-cards" class="btn-outline">Print ID Cards</button>
+        <button id="btn-reset" class="btn-outline btn-danger-outline">Reset Day</button>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-row">
+      <div class="stat-card">
+        <span class="stat-label">Total Students</span>
+        <span class="stat-value" id="stat-total">0</span>
+      </div>
+      <div class="stat-card stat-present">
+        <span class="stat-label">Present</span>
+        <span class="stat-value" id="stat-present">0</span>
+      </div>
+      <div class="stat-card stat-checked-out">
+        <span class="stat-label">Checked Out</span>
+        <span class="stat-value" id="stat-checked-out">0</span>
+      </div>
+      <div class="stat-card stat-absent">
+        <span class="stat-label">Absent</span>
+        <span class="stat-value" id="stat-absent">0</span>
+      </div>
+    </section>
+
+    <!-- Main grid -->
+    <section class="main-grid">
+
+      <div class="panel scanner-panel">
+        <h2>Scan / Check-In</h2>
+        <p class="panel-hint">
+          Start the scanner, then scan a student’s QR card or enter their ID.<br>
+          The system will <strong>capture their photo</strong>, <strong>verify their face</strong>, and update the
+          roster.
+        </p>
+
+        <div id="qr-reader"></div>
+        <p id="scanner-status" class="scanner-status">Camera idle — click “Start Scanner” to begin.</p>
+        <button id="toggle-scanner" class="btn-primary">Start Scanner</button>
+
+        <div class="manual-entry">
+          <label for="manual-id">Manual ID entry (photo will be captured if camera is on)</label>
+          <div class="manual-row">
+            <input type="text" id="manual-id" placeholder="e.g. TS-004" autocomplete="off">
+            <button id="manual-submit" class="btn-secondary">Submit</button>
+          </div>
+        </div>
+
+        <div id="toast" class="toast"></div>
+      </div>
+
+      <div class="panel roster-panel">
+        <div class="roster-header">
+          <h2>Live Roster <span id="roster-date-label" class="roster-date-label"></span></h2>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="roster-table">
+            <thead>
+              <tr>
+                <th>Photo</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Class</th>
+                <th>Status</th>
+                <th>Time In</th>
+                <th>Time Out</th>
+              </tr>
+            </thead>
+            <tbody id="roster-body">
+              <!-- populated by script.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Printable ID card sheet -->
+  <section id="id-card-sheet" class="id-card-sheet"></section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api/dist/face-api.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="students.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+// Demo roster for Temple Secondary School — students selected
+// for the ReadManna TechSpark 2026 competition.
+// Each student gets a unique ID; this ID is what's encoded
+// into their printable QR card.
+
+const STUDENTS = [
+  { id: "TS-001", name: "Samad Ganikale", className: "8C" },
+  { id: "TS-002", name: "Micheal Aladesuru", className: "8A" },
+  { id: "TS-003", name: "Lily Churchill-Momodu", className: "8B" },
+  { id: "TS-004", name: "Niniola Borokinni", className: "8D" },
+  { id: "TS-005", name: "Inioluwa Olaogun", className: "8D" },
+  { id: "TS-006", name: "Bryan Churchill-Momodu", className: "8E" },
+  { id: "TS-007", name: "Foresanmi Adeyemi", className: "8E" },
+  { id: "TS-008", name: "Kayceon Baird", className: "8A" },
+  { id: "TS-009", name: "Damilare Garber", className: "8A" },
+  { id: "TS-010", name: "Enaye Eyeto", className: "8D" },
+  { id: "TS-011", name: "Abdulmalik Sambo", className: "8D" },
+  { id: "TS-012", name: "Franklin Ugochukwu", className: "8D" },
+  { id: "TS-013", name: "Abdul-Raheem Aloba", className: "7A" },
+  { id: "TS-014", name: "Ebun Banjo", className: "7A" },
+  { id: "TS-015", name: "Anton Oliver", className: "7E" },
+  { id: "TS-016", name: "Samuel Chukwuemeka", className: "7E" },
+  { id: "TS-017", name: "Tokesi Luro", className: "8E" },
+  { id: "TS-018", name: "Kaineto Umeh", className: "7E" },
+  { id: "TS-019", name: "Kamsi Birosani", className: "9B" },
+  { id: "TS-020", name: "Moduro Odejimi", className: "8C" },
+  { id: "TS-021", name: "Eniobanke Adamson", className: "7D" },
+  { id: "TS-022", name: "Mark Odigboh", className: "7F" },
+  { id: "TS-023", name: "Abdulraheem Aloba", className: "7A" },
+  { id: "TS-024", name: "Olusaebukatt Hubert", className: "7A" },
+  { id: "TS-025", name: "Chukwudubem Okeke", className: "7B" },
+  { id: "TS-026", name: "Kingdarid Ajegunma", className: "7D" },
+  { id: "TS-027", name: "Jahswill Obialor", className: "7D" },
+  { id: "TS-028", name: "Destiny Chisom", className: "7B" },
+  { id: "TS-029", name: "Stephen Olayinda", className: "7F" },
+  { id: "TS-030", name: "Senetor Yange", className: "7F" },
+  { id: "TS-031", name: "Ifedolapo Opabobi", className: "7A" },
+  { id: "TS-032", name: "Ibukunoluwa Banjo", className: "8A" },
+  { id: "TS-033", name: "Obafolahan Olumeyan", className: "11D" },
+];
